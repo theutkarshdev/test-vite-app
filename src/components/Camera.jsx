@@ -17,25 +17,7 @@ const Camera = () => {
       }
     };
 
-    const handleiOSPermissions = async () => {
-      try {
-        await videoRef.current.play();
-        startCamera();
-      } catch (error) {
-        console.error('Error playing video element:', error);
-      }
-    };
-
-    if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
-      videoRef.current.setAttribute('playsinline', 'true');
-      videoRef.current.setAttribute('controls', 'true');
-      videoRef.current.setAttribute('muted', 'true');
-      videoRef.current.setAttribute('autoplay', 'true');
-
-      handleiOSPermissions();
-    } else {
-      startCamera();
-    }
+    startCamera();
 
     return () => {
       if (stream && stream.getTracks) {
@@ -48,7 +30,7 @@ const Camera = () => {
 
   return (
     <div>
-      <video ref={videoRef} />
+      <video ref={videoRef} autoPlay={true} playsInline={true} />
     </div>
   );
 };
