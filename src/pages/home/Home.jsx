@@ -7,7 +7,7 @@ import { Helmet } from "react-helmet";
 const Home = () => {
   return (
     <div className="home_page">
-      <helmet>
+      <Helmet>
         {/* HTML Meta Tags */}
         <title>Home</title>
         <meta
@@ -39,7 +39,7 @@ const Home = () => {
         />
         <meta name="twitter:image" content="http://www.heymeta.com/img/meta_image.png" />
         {/* Meta Tags Generated via http://heymeta.com */}
-      </helmet>
+      </Helmet>
 
       <TopBanner pgName={"Home"} pgDesc={"This is home page description"} />
     </div>
