@@ -3,7 +3,7 @@ import { GoogleMap, InfoWindow, Marker, useLoadScript } from "@react-google-maps
 
 const Google = () => {
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: "AIzaSyAMsW0MVoeLte7y4hYqSxYqe1Fxn4Pk2KI",
+    googleMapsApiKey: process.env.REACT_APP_GOOGLE_API_KEY,
   });
   const [mapRef, setMapRef] = useState();
   const [isOpen, setIsOpen] = useState(false);
@@ -48,7 +48,7 @@ const Google = () => {
                 data-te-ripple-init
                 data-te-ripple-color="light"
               >
-                <img className="rounded-t-lg" src="https://tecdn.b-cdn.net/img/new/standard/nature/186.jpg"  />
+                <img className="rounded-t-lg" src="https://tecdn.b-cdn.net/img/new/standard/nature/186.jpg" />
                 <a href="#!">
                   <div className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-[hsla(0,0%,98%,0.15)] bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100" />
                 </a>
@@ -68,7 +68,6 @@ const Google = () => {
                   className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                 >
                   Read more
-                  
                 </button>
               </div>
             </div>
@@ -99,7 +98,10 @@ const Google = () => {
                           setIsOpen(false);
                         }}
                       >
-                        <h3>{infoWindowData.address}</h3>
+                        <div className="place-map-card">
+                          <img src="https://via.placeholder.com/100" />
+                          <h3>{infoWindowData.address}</h3>
+                        </div>
                       </InfoWindow>
                     )}
                   </Marker>
