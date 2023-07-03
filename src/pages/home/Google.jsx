@@ -99,7 +99,7 @@ const Google = () => {
                         }}
                       >
                         <div className="place-map-card">
-                          <img src="https://via.placeholder.com/100" />
+                          <img src="https://via.placeholder.com/150x100" />
                           <h3>{infoWindowData.address}</h3>
                         </div>
                       </InfoWindow>
